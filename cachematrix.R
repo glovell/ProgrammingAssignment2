@@ -33,4 +33,8 @@ cacheSolve <- function(x, ...) {
     message("getting cached data")
     return(minv)
   }
+  mat <- x$get()
+  minv <- solve(mat, ...)
+  x$setinv(minv)
+  minv
 }
